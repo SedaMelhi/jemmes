@@ -1,0 +1,60 @@
+import Image from "next/image";
+import Link from "next/link";
+import { FC } from "react";
+import { Telegram, WA } from "../svg";
+
+export const Footer: FC = () => {
+  return (
+    <footer>
+      <div className="flex p-5 justify-between xl:w-3/4 w-full xl:ml-[120px] ml-0">
+        <div className="pt-14">
+          <Image
+            src="logo-footer.svg"
+            alt="logo"
+            width={120}
+            height={169}
+            className="w-auto h-auto"
+          />
+        </div>
+        <div>
+          <h4 className="text-accent font-medium text-2xl tracking-[-0.48px] mb-2">
+            Навигации
+          </h4>
+          <ul className="flex flex-col gap-2">
+            <li className="text-secondary font-medium tracking-[-0.32px]">
+              Главная
+            </li>
+            <li className="text-secondary font-medium tracking-[-0.32px]">
+              Каталог
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="text-accent font-medium text-2xl tracking-[-0.48px] mb-2">
+            Контакты
+          </h4>
+          <ul className="flex flex-col gap-2">
+            <li className="text-secondary font-medium tracking-[-0.32px]">
+              <Link href="https://yandex.eu/maps/-/CDHqf882">
+                Москва, посёлок Внуково, 52, поселение Внуковское
+              </Link>
+            </li>
+            <li className="text-accent">
+              <a href="tel:+79932577807">+7 (993) 257-78-07</a>
+            </li>
+            <li className="text-accent">
+              <a href="tel:+79671707307">+7 (967) 170-73-07</a>
+            </li>
+            <li className="text-secondary font-medium tracking-[-0.32px]">
+              <a href="mailto:info@sadnazakaz.ru">info@sadnazakaz.ru</a>
+            </li>
+          </ul>
+          <div className="bg-accent rounded-2xl p-6 inline-flex gap-5 mt-8">
+            <WA />
+            <Telegram />
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
