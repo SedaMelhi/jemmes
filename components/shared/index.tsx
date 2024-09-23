@@ -3,7 +3,7 @@ export { Logo } from "./logo";
 export { Nav } from "./nav";
 export { SearchInput } from "./searchInput";
 export { CartBtn } from "./cartBtn";
-export { Container } from "./Container";
+export { Container } from "./сontainer";
 export { Filters } from "./filters";
 export { Product } from "./product";
 export { Arrows } from "./arrows";

@@ -22,18 +22,21 @@ export const CategoriesSlider: FC<{ categories: CategoryType[] }> = ({
         },
       }}
     >
-      {categories.map(({ id, name, image }) => (
-        <SwiperSlide
-          key={id}
-          className="lg:w-[373px!important] sm:w-[360px!important] w-[164px!important]"
-        >
-          <div
-            style={{ background: `url(${image}) center/cover no-repeat` }}
-            className="sm:pb-[132%] pb-[140%] rounded-2xl"
-          ></div>
-          <h3 className="mt-3 font-medium text-xl">{name}</h3>
-        </SwiperSlide>
-      ))}
+      {categories &&
+        categories.map(({ id, name, image }) => (
+          <SwiperSlide
+            key={id}
+            className="lg:w-[373px!important] sm:w-[360px!important] w-[164px!important]"
+          >
+            <div
+              style={{
+                background: `url(${image || "not.png"}) center/cover no-repeat`,
+              }}
+              className="sm:pb-[132%] pb-[140%] rounded-2xl"
+            ></div>
+            <h3 className="mt-3 font-medium text-xl">{name}</h3>
+          </SwiperSlide>
+        ))}
     </Swiper>
   );
 };

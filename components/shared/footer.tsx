@@ -6,8 +6,8 @@ import { Telegram, WA } from "../svg";
 export const Footer: FC = () => {
   return (
     <footer>
-      <div className="flex p-5 justify-between xl:w-3/4 w-full xl:ml-[120px] ml-0">
-        <div className="pt-14">
+      <div className="flex sm:flex-row flex-col lg:p-5 justify-between xl:w-3/4 w-full xl:ml-[120px] ml-0">
+        <div className="lg:pt-14 lg:w-full sm:w-1/2 sm:block flex justify-center sm:mb-0 mb-10">
           <Image
             src="logo-footer.svg"
             alt="logo"
@@ -16,7 +16,7 @@ export const Footer: FC = () => {
             className="w-auto h-auto"
           />
         </div>
-        <div>
+        <div className="lg:w-full sm:w-1/2">
           <h4 className="text-accent font-medium text-2xl tracking-[-0.48px] mb-2">
             Навигации
           </h4>
@@ -49,7 +49,7 @@ export const Footer: FC = () => {
               <a href="mailto:info@sadnazakaz.ru">info@sadnazakaz.ru</a>
             </li>
           </ul>
-          <div className="bg-accent rounded-2xl p-6 inline-flex gap-5 mt-8">
+          <div className="bg-accent rounded-2xl p-6 sm:inline-flex flex justify-center gap-5 mt-8">
             <WA />
             <Telegram />
           </div>

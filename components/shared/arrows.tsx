@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { LeftArrowCircle, RightArrowCircle } from "../svg";
-import { Container } from "./Container";
+import { Container } from "./сontainer";
 
 type ArrowsProps = {
   prev: string;

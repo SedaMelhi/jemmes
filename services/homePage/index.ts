@@ -30,6 +30,12 @@ export type ReviewType = {
   image: string;
   text: string;
 };
+type ServicesType = {
+  id: number;
+  title: string;
+  image: string;
+  text: string;
+};
 axios.defaults.baseURL = API_URL;
 
 export const ExamplesService = {
@@ -45,27 +51,27 @@ export const ExamplesService = {
 };
 
 export const CategoriesService = {
-  async getCategories(): Promise<CategoryType[]> {
-    const { data } = await axios.get("/categories");
-    return data;
+  async getCategories(main?: boolean): Promise<CategoryType[]> {
+    try {
+      const params = main !== undefined ? { main } : {};
+      const { data } = await axios.get("/categories", { params });
+      return data;
+    } catch (error) {
+      console.log(error);
+      return [];
+    }
   },
 };
 
 export const ProductsService = {
-  async getProducts(activeFilter: number): Promise<ProductType[] | null> {
+  async getProducts(
+    activeFilter: { [key: string]: boolean },
+    limit?: number
+  ): Promise<ProductType[] | null> {
+    const params = limit ? { ...activeFilter, limit } : activeFilter;
     try {
-      const { data } = await axios.get(
-        `/products?${
-          activeFilter === 0
-            ? "bestseller=true"
-            : activeFilter === 1
-            ? "new=true"
-            : activeFilter === 2
-            ? "promotion=true"
-            : ""
-        }`
-      );
-      return data;
+      const { data } = await axios.get("/products", { params });
+      return data.data;
     } catch (error) {
       return null;
     }
@@ -92,13 +98,6 @@ export const ReviewsService = {
       return null;
     }
   },
-};
-
-type ServicesType = {
-  id: number;
-  title: string;
-  image: string;
-  text: string;
 };
 
 export const ServicesService = {

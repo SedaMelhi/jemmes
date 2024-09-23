@@ -7,9 +7,9 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
       <body className="bg-background">
         <Header />
         {children}
-        {/* <Container className="mt-20">
+        <Container className="mt-20">
           <Footer />
-        </Container> */}
+        </Container>
       </body>
     </html>
   );

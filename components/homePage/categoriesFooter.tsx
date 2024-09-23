@@ -4,7 +4,9 @@ import { CategoriesService, CategoryType } from "@/services/homePage";
 import { CategoriesSlider } from "./categoriesSlider";
 
 export const CategoriesFooter: FC = async () => {
-  const categories: CategoryType[] = await CategoriesService.getCategories();
+  const categories: CategoryType[] = await CategoriesService.getCategories(
+    true
+  );
   return (
     <section className="lg:px-10 px-4 pr-0 max-w-[1600px] m-auto">
       <CategoriesSlider categories={categories} />
