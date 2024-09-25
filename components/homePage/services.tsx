@@ -14,10 +14,10 @@ export const Services: FC = async () => {
             services.map(({ id, title, text, image }) => (
               <div className="sm:flex hidden flex-col" key={id}>
                 <div
-                  className="rounded-2xl sm:pb-[100%] sm:h-auto h-[208px] group p-1 relative group sm:cursor-pointer"
+                  className="rounded-2xl sm:pb-[100%] sm:h-auto h-[208px] group p-1 relative group sm:cursor-pointer bg-secondary"
                   style={{
                     background: `url(${
-                      image || "/no.png"
+                      image || "not.png"
                     }) center/cover no-repeat`,
                   }}
                 >

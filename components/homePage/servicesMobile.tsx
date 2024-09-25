@@ -3,7 +3,6 @@
 import { ServiceType } from "@/app/(root)/page";
 import { FC } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Grid } from "swiper/modules";
 
 import "swiper/css/grid";
 
@@ -15,11 +14,6 @@ export const ServicesMobile: FC<{ services: ServiceType[] }> = ({
       spaceBetween={8}
       slidesPerView={1.2}
       className="mySwiper block sm:hidden "
-      modules={[Grid]}
-      grid={{
-        fill: "row",
-        rows: 2,
-      }}
     >
       {services.map(({ id, title, text, image }) => (
         <SwiperSlide key={id} className="sm:space-x-1 flex-auto">

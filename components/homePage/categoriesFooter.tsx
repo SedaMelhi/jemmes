@@ -8,7 +8,7 @@ export const CategoriesFooter: FC = async () => {
     true
   );
   return (
-    <section className="lg:px-10 px-4 pr-0 max-w-[1600px] m-auto">
+    <section className="lg:px-10 px-4 pr-0 max-w-[1600px] m-auto mt-10">
       <CategoriesSlider categories={categories} />
       <div className="lg:pr-0 pr-4">
         <MyButton

@@ -13,14 +13,7 @@ export const Products: FC = () => {
   const [activeFilter, setActiveFilter] = useState<number>(0);
   const [products, setProducts] = useState<ProductType[] | null>(null);
   const getProducts = async (activeFilter: number) => {
-    const data = await ProductsService.getProducts(
-      activeFilter === 0
-        ? { bestseller: true }
-        : activeFilter === 1
-        ? { new: true }
-        : { promotion: true },
-      4
-    );
+    const data = await ProductsService.getProducts(activeFilter, 4);
     setProducts(data);
   };
   useEffect(() => {

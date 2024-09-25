@@ -1,13 +1,10 @@
-import {
-  CategoriesList,
-  CategoryCards,
-  CustomBreadcrumb,
-} from "@/components/categoriesPage";
+//import { notFound } from "next/navigation";
+
+import { CategoriesList, CustomBreadcrumb } from "@/components/categoriesPage";
 import { Container, FormAndServices } from "@/components/shared";
 import { CategoriesService, CategoryType } from "@/services/homePage";
-import { NextPage } from "next";
 
-const Categories: NextPage = async () => {
+const ProductPage = async ({ params: { id } }: { params: { id: number } }) => {
   const categories: CategoryType[] = await CategoriesService.getCategories();
   return (
     <div>
@@ -21,8 +18,8 @@ const Categories: NextPage = async () => {
           />
         </Container>
         <div className="lg:flex gap-8 lg:mt-10 sm:mt-6 mt-4 max-w-[1559px] m-auto lg:px-5">
-          <CategoriesList categories={categories} />
-          <CategoryCards categories={categories} />
+          <CategoriesList categories={categories} activeSubcat={+id} />
+          {/* <CategoryCards categories={categories} /> */}
         </div>
       </main>
       <FormAndServices />
@@ -30,4 +27,4 @@ const Categories: NextPage = async () => {
   );
 };
 
-export default Categories;
+export default ProductPage;

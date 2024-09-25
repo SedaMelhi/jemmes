@@ -52,9 +52,9 @@ export const FormRight: FC = () => {
           value="Отправить заявку"
           className="lg:w-auto w-full bg-accent text-white-100 text-base hover:bg-white-100 hover:text-accent sm:mt-7 mt-6"
         />
-        <div className="flex gap-5 px-3 mt-8 sm:justify-start justify-center w-full">
-          <WA />
-          <Telegram />
+        <div className="flex gap-5 px-3 mt-8 lg:hidden sm:justify-start justify-center w-full">
+          <WA type="orange" />
+          <Telegram type="orange" />
         </div>
       </form>
     </div>

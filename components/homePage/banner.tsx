@@ -7,7 +7,7 @@ export const Banner = async () => {
     <div>
       <section
         className={
-          "lg:h-[500px] sm:h-[400px] h-[190px] bg-cover bg-center bg-no-repeat flex items-center justify-center rounded-2xl"
+          "lg:h-[500px] sm:h-[400px] h-[190px] bg-cover bg-center bg-no-repeat flex items-center justify-center rounded-2xl bg-secondary"
         }
         style={{
           backgroundImage: `url(${banner ? banner[0].url : "/banner.png"})`,

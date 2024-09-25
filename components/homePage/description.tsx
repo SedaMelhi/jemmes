@@ -29,7 +29,7 @@ export const Description = () => {
               className="w-auto h-auto"
             />
           </div>
-          <div className="flex sm:flex-row flex-col sm:gap-6 gap-4 leading-[18px] mt-10 text-primary">
+          <div className="flex sm:flex-row flex-col sm:gap-6 gap-4 leading-[18px] mt-10">
             <div>
               <p>
                 Мы специализируемся на ландшафтном дизайне, архитектурном

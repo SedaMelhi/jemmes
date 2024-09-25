@@ -32,7 +32,7 @@ export const CategoriesSlider: FC<{ categories: CategoryType[] }> = ({
               style={{
                 background: `url(${image || "not.png"}) center/cover no-repeat`,
               }}
-              className="sm:pb-[132%] pb-[140%] rounded-2xl"
+              className="sm:pb-[132%] pb-[140%] rounded-2xl bg-secondary"
             ></div>
             <h3 className="mt-3 font-medium text-xl">{name}</h3>
           </SwiperSlide>

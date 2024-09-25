@@ -65,7 +65,7 @@ export const Reviews: FC<{ reviews: ReviewType[] | null }> = ({ reviews }) => {
                   </div>
                 </div>
                 <div className="lg:w-[535px] flex flex-col flex-auto justify-between">
-                  <p className="lg:font-medium lg:text-2xl text-[14px] lg:leading-[25px] leading-4 lg:mb-6 mb-4 text-primary">
+                  <p className="lg:font-medium lg:text-2xl text-[14px] lg:leading-[25px] leading-4 lg:mb-6 mb-4">
                     {text}
                   </p>
                   <div className="lg:text-base text-xs text-secondary">

@@ -6,3 +6,4 @@ export { Cart } from "./cart";
 export { Inst } from "./inst";
 export { Search } from "./search";
 export { Checkbox } from "./checkbox";
+export { Close } from "./close";

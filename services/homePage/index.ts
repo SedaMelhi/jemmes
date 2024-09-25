@@ -30,11 +30,16 @@ export type ReviewType = {
   image: string;
   text: string;
 };
-type ServicesType = {
+export type ServicesType = {
   id: number;
   title: string;
   image: string;
   text: string;
+};
+
+export type SubcategoryType = {
+  id: number;
+  name: string;
 };
 axios.defaults.baseURL = API_URL;
 
@@ -61,14 +66,23 @@ export const CategoriesService = {
       return [];
     }
   },
+  async getSubcategories(category: number): Promise<SubcategoryType[] | null> {
+    try {
+      const { data } = await axios.get(`/categories/${category}/subcategories`);
+      return data.data;
+    } catch (error) {
+      console.log(error);
+      return null;
+    }
+  },
 };
 
 export const ProductsService = {
   async getProducts(
-    activeFilter: { [key: string]: boolean },
+    activeFilter: number,
     limit?: number
   ): Promise<ProductType[] | null> {
-    const params = limit ? { ...activeFilter, limit } : activeFilter;
+    const params = limit ? { type: activeFilter, limit } : activeFilter;
     try {
       const { data } = await axios.get("/products", { params });
       return data.data;

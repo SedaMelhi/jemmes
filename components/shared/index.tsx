@@ -11,3 +11,4 @@ export { Footer } from "./footer";
 export { ProductCount } from "./productCount";
 export { Menu } from "./menu";
 export { MobileMenu } from "./mobileMenu";
+export { FormAndServices } from "./formAndServices";
