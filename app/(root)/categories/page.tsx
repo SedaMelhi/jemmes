@@ -21,7 +21,7 @@ const Categories: NextPage = async () => {
           />
         </Container>
         <div className="lg:flex gap-8 lg:mt-10 sm:mt-6 mt-4 max-w-[1559px] m-auto lg:px-5">
-          <CategoriesList categories={categories} />
+          <CategoriesList categories={categories} activeSubcat={0} />
           <CategoryCards categories={categories} />
         </div>
       </main>
